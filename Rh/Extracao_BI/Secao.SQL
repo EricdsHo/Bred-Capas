@@ -1,0 +1,43 @@
+SELECT
+   INSTANCIA = <<INSTANCIA>>
+  ,FKCODCOLIGADA = CONVERT(VARCHAR, PSECAO.CODCOLIGADA)
+  ,PKCODSECAO = CONVERT(VARCHAR, PSECAO.CODCOLIGADA) + '_' + ISNULL(CONVERT(VARCHAR, PSECAO.CODIGO), 'N/A')
+  ,[Codigo da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.CODIGO))
+  ,[Descricao da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.DESCRICAO))
+  ,[Descricao da Secao PPP] = UPPER(CONVERT(VARCHAR(255), PSECAO.DESCRICAOPPP))
+  ,[Data de Alteracao RECNO] = ISNULL(CONVERT(VARCHAR(10), PSECAO.RECMODIFIEDON, 112), '19000101')
+
+  ,[Rua da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.RUA))
+  ,[Numero da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.NUMERO))
+  ,[Complemento da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.COMPLEMENTO))
+  ,[Bairo da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.BAIRRO))
+  ,[CEP da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.CEP))
+  ,[Estado da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.ESTADO))
+  ,[Cidade da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.CIDADE))
+  ,[Telefone da Secao] = UPPER(CONVERT(VARCHAR, PSECAO.TELEFONE))
+  
+FROM
+  PSECAO WITH (NOLOCK)
+
+UNION ALL
+
+SELECT
+   INSTANCIA = <<INSTANCIA>>
+  ,FKCODCOLIGADA = CONVERT(VARCHAR, GCOLIGADA.CODCOLIGADA)
+  ,PKCODSECAO = CONVERT(VARCHAR, GCOLIGADA.CODCOLIGADA) + '_' + 'N/A'
+  ,[Codigo da Secao] = 'N/A'
+  ,[Descricao da Secao] = 'N/A'
+  ,[Descricao da Secao PPP] = 'N/A'
+  ,[Data de Alteracao RECNO] = ISNULL(CONVERT(VARCHAR(10), GCOLIGADA.RECMODIFIEDON, 112), '19000101')
+  
+  ,[Rua da Secao] = 'N/A'
+  ,[Numero da Secao] = 'N/A'
+  ,[Complemento da Secao] = 'N/A'
+  ,[Bairo da Secao] = 'N/A'
+  ,[CEP da Secao] = 'N/A'
+  ,[Estado da Secao] = 'N/A'
+  ,[Cidade da Secao] = 'N/A'
+  ,[Telefone da Secao] = 'N/A'
+FROM
+  GCOLIGADA WITH (NOLOCK)
+;
