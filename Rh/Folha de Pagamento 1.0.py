@@ -3,7 +3,6 @@ import re
 from tkinter import Tk, filedialog
 import datetime
 
-
 def convert_excel_format():
     # Esconder a janela principal do Tk
     root = Tk()
@@ -40,9 +39,7 @@ def convert_excel_format():
     e2_hist = input("Digite o valor para E2_HIST: ")
 
     # Definindo E2_EMISSAO para a data atual
-    e2_emissao = datetime.datetime.now().strftime("%d/%m/%Y")  
-
-
+    e2_emissao = datetime.datetime.now().strftime("%d/%m/%Y")
 
     # Lendo o arquivo Excel
     df = pd.read_excel(file_path)
@@ -94,3 +91,4 @@ def convert_excel_format():
 # Executando a função
 if __name__ == '__main__':
     convert_excel_format()
+    input("Pressione Enter para sair...")  # Manter o terminal aberto até que o usuário pressione Enter
