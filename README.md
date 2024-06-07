@@ -17,7 +17,7 @@ Clone o repositório para a sua máquina local:
 
 sh
 Copiar código
-git clone https://github.com/seu_usuario/Bred-Capas.git
+git clone https://github.com/EricdsHo/Bred-Capas
 Navegue até o diretório do projeto:
 
 sh
