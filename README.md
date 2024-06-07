@@ -1,31 +1,47 @@
-# Formatação de Folha de Pagamento
-Este é um programa Python desenvolvido para formatar folhas de pagamento de funcionários, transformando arquivos Excel de entrada em um formato específico conforme necessário. Este programa também permite ao usuário selecionar arquivos de entrada e saída por meio de uma interface gráfica simples.
+# Importação da Folha de Pagamento
 
-Requisitos
-Python 3.6 ou superior
-Bibliotecas Python: tkinter, pandas, openpyxl
-PyInstaller (opcional, para criar um executável)
-Instalação das Bibliotecas Necessárias
-sh
-Copiar código
-pip install pandas openpyxl
-Instruções de Uso
+Este repositório contém ferramentas para importar a folha de pagamento da empresa.
 
-1. Execução via Python
-Passo a Passo:
-Clone o repositório para a sua máquina local:
+## Passo a Passo
 
-sh
-Copiar código
-git clone https://github.com/EricdsHo/Bred-Capas
-Navegue até o diretório do projeto:
+1. **Recebimento:** Receba a folha de pagamento por e-mail ou WhatsApp.
+2. **Preparação:** 
+   - Separe o mês atual em um novo arquivo Excel.
+   - Salve o arquivo no formato `Folha (mês) (aaaa-mm-dd)`.
+3. **Informações Necessárias:**
+   - Último lançamento no prefixo RHI (painel [07.01]).
+   - Data de pagamento.
+   - Natureza do pagamento: `007001001` (salário) ou `007001002` (adiantamento).
+   - Histórico: `Folha (Salário/Adiantamento) (mm/aa)`.
+4. **Baixar e Executar:**
+   - Baixe o repositório como ZIP.
+   - Execute o programa na pasta `dist` como administrador.
+   - Selecione o arquivo Excel e salve o novo arquivo com "- Formatado".
+5. **Preenchimento das Informações:**
+   - Forneça o número maior que o último lançamento (E2_NUM).
+   - Informe a natureza, data de pagamento e histórico formatado.
 
-sh
-Copiar código
-cd Bred-Capas/Rh
-Execute o script Folha de Pagamento 1.0.py:
+## Validações
 
-sh
-Copiar código
-python "Folha de Pagamento 1.0.py"
-Siga as instruções na interface gráfica para selecionar o arquivo de entrada e o diretório de saída.
+- Certifique-se de que o Excel tenha apenas uma aba.
+- Valide o formato da folha de pagamento.
+- Use o programa "**PROCV Fornecedor**" para preencher os códigos de fornecedor.
+
+## Importação
+
+- Siga as instruções detalhadas [aqui](https://docs.google.com/document/d/15Df5Kwursnd_0qNLkxGTVh5r1F04CFqWrY0_7P-r5A4/edit?usp=sharing).
+
+## Estrutura do Repositório
+
+```plaintext
+Bred-Capas/
+├── dist/
+│   ├── Folha de pagamento/
+│   └── Procv Fornecedor/
+├── README.md
+└── ...
+```
+
+## Suporte
+
+Para dúvidas, entre em contato com o suporte da empresa ou abra uma issue no repositório.
